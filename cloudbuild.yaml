@@ -1,14 +1,14 @@
 steps:
     # Step 1: Build the Docker image ---
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker-2'
     args: ['build', '-t', '${_REGION}-docker.pkg.dev/${PROJECT_ID}/my-docker-images/users-service:${_APP_VERSION}', '.']
 
     # Step 2: Push the Docker image
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker-2'
     args: ['push', '${_REGION}-docker.pkg.dev/${PROJECT_ID}/my-docker-images/users-service:${_APP_VERSION}']
 
     # Step 3: Deploy service to Kubernetes ---
-  - name: 'gcr.io/cloud-builders/kubectl'
+  - name: 'gcr.io/cloud-builders/kubectl-2'
     id: 'deploy-service'
     args:
       - 'apply'
@@ -19,7 +19,7 @@ steps:
       - 'CLOUDSDK_CONTAINER_CLUSTER=my-udemy-cluster'
 
     # Step 4: Deploy deployment to Kubernetes ---
-  - name: 'gcr.io/cloud-builders/kubectl'
+  - name: 'gcr.io/cloud-builders/kubectl-2'
     id: 'deploy-deployment'
     args:
       - 'apply'
