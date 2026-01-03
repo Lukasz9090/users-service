@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: users-service-container
-          image: europe-central2-docker.pkg.dev/my-k8s-project-482709/my-docker-images/users-service:1.0.0
+          image: europe-central2-docker.pkg.dev/my-k8s-project-482709/my-docker-images/users-service:1.0.1
 
           ports:
             - containerPort: 8080
