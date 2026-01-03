@@ -19,6 +19,7 @@ public class UsersServiceController {
 
     static {
         users.add(new UserDto("1", "John Doe"));
+
     }
 
     @GetMapping()
